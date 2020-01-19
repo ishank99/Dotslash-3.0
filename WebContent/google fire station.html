@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>My google map</title>
+        <style>
+            #map{
+                height:600px;
+                width:100%;
+            }
+            </style>
+    </head>
+    <body>
+        <h1>My google maps</h1>
+        <div id="map"></div>
+        <script>
+            function initMap(){
+                var options = {
+                    zoom:13,
+                    center:{lat:21.1702,lng:72.8311}
+                }
+
+                var map= new 
+                google.maps.Map(document.getElementById('map'),options);
+
+                // var marker= new google.maps.Marker({
+                //     position:{lat:21.1829,lng:72.8316},
+                //     map:map
+                // });
+
+                // var infoWindow= new google.maps.InfoWindow({
+                //     content:'<h1>Phone</h1>'
+                // });
+
+                // marker.addListener('click',function(){
+                //     infoWindow.open(map,marker);
+                // });
+
+                     addMarker({lat:21.1814,lng:72.8041});
+                    addMarker({lat:21.1986,lng:72.7902});
+                    addMarker({lat:21.1983,lng:72.8227});
+                    addMarker({lat:21.1766,lng:72.8317});
+                    addMarker({lat:21.1792,lng:72.8038});
+                    addMarker({lat:21.1419,lng:72.8400});
+                function addMarker(coords){
+                    var marker= new google.maps.Marker({
+                    position:coords,
+                    map:map
+                });
+
+                }
+            }
+
+
+        </script>
+        
+        <script async defer
+   // src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKAY9F5dbqQQtOjuXaIRv171QIUviLj2U&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/directions/json?
+origin=Toronto&destination=Montreal
+&key=AIzaSyBKAY9F5dbqQQtOjuXaIRv171QIUviLj2U"
+    </script>
+    </body>
+</html>
